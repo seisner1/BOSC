@@ -1,0 +1,54 @@
+###########################################################
+#	Author: Shaun Eisner
+#	Project: Blended Ocean Surface Currents
+###########################################################
+
+
+
+Versions					Summary/Changes
+
+
+T2.0.1						First version with full Geostrophy, Ekman/Stokes, mean correction, and SST correction for 2018-2020
+						Geos - Basic Geostrophy from SLA with equatorial smoothing (Sudre et al 2014)
+						Ekman/Stokes - Constant Eddy diffusivity (8e-2), Ekman spiral with amp based on Ekman depth (determined by diffusivity). Emperical spiral (Rio et al 2014)
+						SST Correction - Corrects all of U and V using SST, weighted combination, weighting only corrects in the lat band -5:5, (Rio et al 2018) 
+						coverage - 0.25 deg, daily, 2018-2020
+
+
+T2.0.2						Updates to SST correction algorithm
+						SST correction - Corrects only the perpendicular component of U and V, weighted comb, weighting is global but most correction in lat band -5:5
+
+
+
+
+T2.0.3						Updates to weighting algorithm
+						SST Correction - weighting is altered to improve weighting in mid-latitudes
+
+
+
+T2.0.4						Further updates to weighting algorithm
+						SST Correction - weighting removes dependence on SST rate of change to try to improve mid-latitude performance
+
+
+T2.0.5						Weighting algorithm updates
+						SST Correction - weighting is updated to |grad_SST|/|f| and weighting params are set to gamma = 12, eps = 100, SST alg is the same as (Rio et al 2018)
+								but with weighting
+						coverage - 0.25 deg, daily, 2018-2020
+
+
+T2.0.6						Update to grid resolution/Replacement of SST dataset
+						SST Correction - SST data is replaced with OSPO Geopolar Blended Nighttime
+						Coverage - 0.16 deg, daily, 2017-2020
+
+
+T2.0.7						Update to time span and time means
+						Means - Means are updated to be computed from 2017-2021. Geos, Ekman/Stokes components are corrected by replacing the longer span means with 
+							Laurindo et al (2018) means
+						Time Spac - Covers 2017 to 2021
+						coverage - 0.16 deg, daily, 2017-2021
+
+
+
+
+T2.0.8						Update to Semi-Geos Calc
+						Geos-computing Geos directly on 1/6 deg grid, added Jan-Feb of 2017

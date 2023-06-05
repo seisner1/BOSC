@@ -1,0 +1,20 @@
+author: Shaun Eisner
+
+Purpose: To temporarily track SST versions while trying to find optimal SST correction scheme
+
+
+v1 - Set cutoff for low SST gradient to norm_grad<=5e-6 yields alpha=0 (ignore contributions where SST gradient is too low)
+
+v2 - changed cutoff for low SST gradient to norm_grad<=1e-6 yields alpha=0
+
+v3 - changed cutoff for low SST gradient to norm_grad<=1e-8
+
+v5 - Included a cutoff for low background yielding alpha=0
+
+v6 - No version
+
+v7 - All SST have advective component (bkg comp parallel to gradient) removed
+
+v8 - Combined no advective SST with advective SST by taking gauss weighted combination where no advective SST is highest within Ro radius of Eq
+
+v9 - Changed to include the SST_param weighting (sst_param = 1e-8/norm_grad with norm_grad averaged over 5 days and 1 deg box) for the no advection SST

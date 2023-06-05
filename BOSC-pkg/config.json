@@ -1,0 +1,64 @@
+{
+    "header": {
+	"vers": "T2.0.9",
+	"sst_vers": "9",
+	"syear": "2017",
+	"fyear": "2018",
+	"grid_file": "./grids/0.16_deg_BOSC_grid"
+    },
+    "input": {
+        "dir_main": "/aosc/iceland1/seisner1/bosc",
+	"sla_file": "sealevel/yearly/rads_global_nrt_sla_*-0.16deg.nc",
+	"stress_file": "era5/stress/yearly/era5-stress-dy-{year}_remap.nc",
+	"beta02_file": "EkSt_param/yearly/globcurrent_beta2_0.2m_dy_{year}.nc",
+	"beta15_file": "EkSt_param/yearly/globcurrent_beta2_15m_dy_{year}.nc",
+	"theta02_file": "EkSt_param/yearly/globcurrent_theta2_0.2m_dy_{year}.nc",
+        "theta15_file": "EkSt_param/yearly/globcurrent_theta2_15m_dy_{year}.nc",	 
+	"sst_file": "sst/yearly/*-OSPO-L4_GHRSST-SSTfnd-Geo_Polar_Blended_Night-GLOB-v02.0-fv01.0-0.16deg.nc"
+    },
+    "output": {
+        "dir_out": "/aosc/iceland1/seisner1",
+        "geos_out": "bosc-temp/products/temp-v{vers}_global_BOSC_SGE_2Lev_{year}.nc",
+	"corr_out": "bosc-temp/products/SST/v1/corr_v{vers}_{year}.nc",
+	"sst_out": "bosc-temp/products/SST/{sst_vers}/corr-sst_v{vers}_{year}-{sst_vers}.nc"
+    },
+    "SLA_file_keys": {
+	"sla": "sla",
+	"time": "time",
+	"lat": "lat",
+	"lon": "lon"
+    },
+    "Ekst_file_keys": {
+	"taux": "ewss",
+	"tauy": "nsss",
+	"beta": "beta2",
+	"theta": "theta2",
+	"time": "time",
+	"lon": "longitude",
+	"lat": "latitude"
+    },
+    "SST_file_keys": {
+	"sst": "analysed_sst",
+	"time": "time",
+	"lat": "lat",
+	"lon": "lon"
+    },
+    "bosc_file_keys": {
+	"u_g": "ugsg",
+	"v_g": "vgsg",
+	"ug_adv": "ug_adv",
+	"vg_adv": "vg_adv",
+	"u_20cm": "u_20cm",
+	"v_20cm": "v_20cm",
+	"u_15m": "u_15m",
+	"v_15m": "v_15m",
+	"u_sst_20cm": "u_SST20cm",
+	"v_sst_20cm": "v_SST20cm",
+	"u_sst_15m": "u_SST15m",
+	"v_sst_15m": "v_SST15m",
+	"time": "time",
+	"lat": "lat",
+	"lon": "lon"
+    }
+	 
+}
